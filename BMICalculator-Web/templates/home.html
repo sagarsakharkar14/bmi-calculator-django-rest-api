@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    
+    <a href="{% url "result" %}"><h1>Calculate Your BMI Now</h1></a>
+    {% if bmirecords %}
+    <h1>Last 5 records of BMI</h1>
+    <ul>
+        {% for record in bmirecords %}
+
+        <li>Name: {{record.name}} and BMI {{record.bmi}}</li>
+<br>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h1>Lets Calculate Your BMI here...</h1>
+    {% endif %}
+</body>
+</html>
